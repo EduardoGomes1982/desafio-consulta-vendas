@@ -35,7 +35,6 @@ public class SaleController {
 			@RequestParam(name = "name", defaultValue = "") String name, 
 			Pageable pageable) {
 		Page<SalePeriodReportDTO> dto = service.searchSaleForPeriodAndSellerName(minDate, maxDate, name, pageable);
-		System.out.println(minDate + " " + maxDate + " " + name);
 		return ResponseEntity.ok(dto);
 	}
 
@@ -45,7 +44,6 @@ public class SaleController {
 			@RequestParam(name = "maxDate", defaultValue = "") String maxDate,
 			Pageable pageable) {
 		Page<SaleSummaryReportDTO> dto = service.searchSaleSummaryForPeriod(minDate, maxDate, pageable);
-		System.out.println(minDate + " " + maxDate);
 		return ResponseEntity.ok(dto);
 	}
 }
